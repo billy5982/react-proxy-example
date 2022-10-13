@@ -1,5 +1,5 @@
 import React from "react";
-
+import { FaLock, FaLockOpen } from "react-icons/fa";
 const TodoTable = ({ todos }) => {
   if (todos.length === 0) return null;
 
@@ -23,7 +23,7 @@ const TodoTable = ({ todos }) => {
                   <tr key={index} className={index % 2 === 0 ? "odd" : "even"}>
                     <td>{index + 1}</td>
                     <td>{todo.todo}</td>
-                    <td>{todo.category}</td>
+                    <td>{todo.isComplete ? <FaLock /> : <FaLockOpen />}</td>
                   </tr>
                 );
               })}
